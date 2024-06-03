@@ -23,6 +23,7 @@ export default {
     display: flex;
     justify-content: center;
     gap: 1rem;
+    margin-bottom: 1rem;
 }
 
 #search {
