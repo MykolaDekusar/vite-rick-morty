@@ -10,7 +10,7 @@ export default {
     }
 }
 </script>
-<template>
+<template v-cloak>
     <div class="card">
         <img :src="image" :alt="name">
         <h3 class="name">{{ name }}</h3>
@@ -30,9 +30,11 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 20px;
     width: calc(100%/4);
         img{
             border-radius: 50%;
+            width: 280px;
         }
         .name{
             margin-top: 1rem;
