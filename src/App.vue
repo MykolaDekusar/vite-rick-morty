@@ -1,5 +1,5 @@
 <script>
-import AppHeader from './components/AppHeader.vue'
+import AppTitle from './components/AppTitle.vue'
 import AppFoundN from './components/AppFoundN.vue'
 import AppCard from './components/AppCard.vue'
 import AppJumbotron from './components/AppJumbotron.vue'
@@ -7,7 +7,7 @@ import AppJumbotron from './components/AppJumbotron.vue'
 export default {
     name:"Main",
     components:{
-        AppHeader,
+        AppTitle,
         AppFoundN,
         AppCard,
         AppJumbotron
@@ -17,7 +17,8 @@ export default {
 </script>
 
 <template>
-    <AppHeader/>
+    <AppTitle/>
+    <AppJumbotron/>
 header
 jumbotron search bar
 cards

@@ -1,7 +1,6 @@
 <script>
 export default {
-    name:"Header",
-
+    name:"Title",
 }
 </script>
 
@@ -13,6 +12,6 @@ export default {
 h1 {
     text-align: center;
     font-size: 3rem;
-    margin-top: 3rem;
+    margin: 3rem 0rem;
 }
 </style>
