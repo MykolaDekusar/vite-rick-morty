@@ -11,8 +11,11 @@ export default {
         <option value="alive">Alive</option>
         <option value="human">human</option>
     </select>
-    <button id="search">Search</button>
-    <button id="reset">Reset</button>
+    <div class="buttons">
+        <button id="search">Search</button>
+        <button id="reset">Reset</button>
+    </div>
+    
 </div>
 
 </template>
@@ -24,6 +27,11 @@ export default {
     justify-content: center;
     gap: 1rem;
     margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+.buttons{
+    display: flex;
+    gap: 1rem;
 }
 
 #search {
@@ -41,5 +49,4 @@ export default {
     padding: 5px 10px;
     border-radius: 5px;
 }
-
 </style>

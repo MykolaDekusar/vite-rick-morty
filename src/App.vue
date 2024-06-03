@@ -33,22 +33,13 @@ export default {
 
 <template>
     <AppTitle/>
+
     <AppJumbotron/>
+
     <div class="container">
         <AppCard v-for="info in list" :image="info.image" :name="info.name" :status="info.status" :gender="info.gender"/>
     </div>
 
-header
-jumbotron search bar
-cards
-footer
+    <AppFoundN/>
 </template>
 
-<style scoped>
-.container {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-
-</style>
