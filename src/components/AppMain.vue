@@ -27,6 +27,18 @@ export default {
         hideNSHow(){
             this.store.show=true;
         },
+
+        resetSearch(){
+            this.store.show=false;
+            axios.get(`https://rickandmortyapi.com/api/character`).then(response =>{
+            setTimeout(this.hideNSHow, 200);
+            this.list=response.data.results;
+            this.store.count=response.data.info.count;
+            this.store.name= null,
+            this.store.status = null;
+            },
+         )},
+
         findEmit(){
             this.store.show=false;
             axios.get(`https://rickandmortyapi.com/api/character`, {
@@ -41,6 +53,11 @@ export default {
             this.store.count=response.data.info.count;
       }).catch(error => {
         console.log(error);
+        axios.get(`https://rickandmortyapi.com/api/character`).then(response =>{
+        setTimeout(this.hideNSHow, 200);
+        this.list=response.data.results;
+        this.store.count=response.data.info.count;
+      })
       })
         },
     },
@@ -60,7 +77,7 @@ export default {
     <AppLoader v-if="!store.show"/>
     <div v-else>
         <AppTitle/>
-        <AppFind :info="list" @cerca="findEmit"/>
+        <AppFind :info="list" @cerca="findEmit" @resetta="resetSearch"/>
         <div class="container">
             <AppCard v-for="(info, index) in list" :key="index" :image="info.image" :name="info.name" :status="info.status" :gender="info.gender"/>
         </div>

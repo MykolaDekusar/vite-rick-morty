@@ -3,7 +3,7 @@ import {store} from "../store";
 
 export default {
     name:"SearchBar",
-    emits:['cerca',],
+    emits:['cerca','resetta'],
     data(){
         return {
             store,
@@ -15,14 +15,13 @@ export default {
 <div class="searchBar">
     <input v-model="store.name" type="text" placeholder="Search character">
     <select v-model="store.status" name="cards" id="card-select">
-        <option value="">Select Status</option>
         <option value="Alive">Alive</option>
         <option value="Dead">Dead</option>
         <option value="unknown">unknown</option>
     </select>
     <div class="buttons">
         <button @click="$emit('cerca')" id="search">Search</button>
-        <button id="reset">Reset</button>
+        <button @click="$emit('resetta')" id="reset">Reset</button>
     </div>
     
 </div>
