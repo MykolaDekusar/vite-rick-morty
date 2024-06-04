@@ -10,7 +10,7 @@ export default {
     }
 }
 </script>
-<template v-cloak>
+<template>
     <div class="card">
         <img :src="image" :alt="name">
         <h3 class="name">{{ name }}</h3>
@@ -18,14 +18,10 @@ export default {
             <p class="status">{{ status }}</p>
             <p class="gender">{{ gender }}</p>
         </div>
-    
     </div>
-   
-    
 </template>
 
 <style scoped>
-
 .card{
     display: flex;
     flex-direction: column;
@@ -40,7 +36,7 @@ export default {
             margin-top: 1rem;
         }
         .info {
-            margin: 3rem 0;
+            margin: 1rem 0 3rem 0;
         }
 }
 

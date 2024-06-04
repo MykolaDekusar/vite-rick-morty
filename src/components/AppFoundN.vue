@@ -1,10 +1,16 @@
 <script>
+import {store} from "../store";
 export default {
     name:"FoundTimes",
+    data(){
+        return{
+            store,
+        }
+    }
 }
 </script>
 <template>
-    <h4>Found 20 characters</h4>
+    <h4>Found {{ store.count }} characters</h4>
 </template>
 
 <style scoped>

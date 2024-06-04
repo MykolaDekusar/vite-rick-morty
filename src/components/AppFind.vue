@@ -1,18 +1,27 @@
 <script>
+import {store} from "../store";
+
 export default {
     name:"SearchBar",
+    emits:['cerca',],
+    data(){
+        return {
+            store,
+        };
+    },
 }
 </script>
 <template>
 <div class="searchBar">
-    <input type="text" placeholder="Search character">
-    <select name="cards" id="card-select">
+    <input v-model="store.name" type="text" placeholder="Search character">
+    <select v-model="store.status" name="cards" id="card-select">
         <option value="">Select Status</option>
-        <option value="alive">Alive</option>
-        <option value="human">human</option>
+        <option value="Alive">Alive</option>
+        <option value="Dead">Dead</option>
+        <option value="unknown">unknown</option>
     </select>
     <div class="buttons">
-        <button id="search">Search</button>
+        <button @click="$emit('cerca')" id="search">Search</button>
         <button id="reset">Reset</button>
     </div>
     
@@ -28,6 +37,9 @@ export default {
     gap: 1rem;
     margin-bottom: 1rem;
     flex-wrap: wrap;
+    input {
+        padding-left: 1rem;
+    }
 }
 .buttons{
     display: flex;
