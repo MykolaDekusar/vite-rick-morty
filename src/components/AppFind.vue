@@ -13,7 +13,7 @@ export default {
 </script>
 <template>
 <div class="searchBar">
-    <input v-model="store.name" type="text" placeholder="Search character">
+    <input @keyup.enter="$emit('cerca')" v-model="store.name" type="text" placeholder="Search character">
     <select v-model="store.status" name="cards" id="card-select">
         <option value="Alive">Alive</option>
         <option value="Dead">Dead</option>
